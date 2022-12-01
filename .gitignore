@@ -1,0 +1,3 @@
+/node_modules
+yarn.lock
+/src/data/articles.json.backup
