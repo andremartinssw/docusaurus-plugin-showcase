@@ -87,7 +87,7 @@ export var Tags = {
     electron: {
         label: translate({ message: 'Electron' }),
         description: translate({
-            message: 'Docusaurus sites using the right-to-left reading direction support.',
+            message: '',
             id: 'showcase.tag.electron.description'
         }),
         color: '#75A3AB'
@@ -95,7 +95,7 @@ export var Tags = {
     relayrealtime: {
         label: translate({ message: 'Relay Realtime SDK (v3)' }),
         description: translate({
-            message: 'Docusaurus sites using the right-to-left reading direction support.',
+            message: '',
             id: 'showcase.tag.relayrealtime.description'
         }),
         color: '#044CF6'
@@ -103,7 +103,7 @@ export var Tags = {
     relay: {
         label: translate({ message: 'Relay SDK (v2)' }),
         description: translate({
-            message: 'Docusaurus sites using the right-to-left reading direction support.',
+            message: '',
             id: 'showcase.tag.relay.description'
         }),
         color: '#9BB7FB'
@@ -111,7 +111,7 @@ export var Tags = {
     relaybrowser3: {
         label: translate({ message: 'Relay Browser SDK (v3)' }),
         description: translate({
-            message: 'Docusaurus sites using the right-to-left reading direction support.',
+            message: '',
             id: 'showcase.tag.relaybrowser3.description'
         }),
         color: '#044CF6'
@@ -119,7 +119,7 @@ export var Tags = {
     relaybrowser2: {
         label: translate({ message: 'Relay Browser SDK (v2)' }),
         description: translate({
-            message: 'Docusaurus sites using the right-to-left reading direction support.',
+            message: '',
             id: 'showcase.tag.relaybrowser2.description'
         }),
         color: '#9BB7FB'
@@ -127,7 +127,7 @@ export var Tags = {
     compatibility: {
         label: translate({ message: 'Compatibility API' }),
         description: translate({
-            message: 'Docusaurus sites using the right-to-left reading direction support.',
+            message: '',
             id: 'showcase.tag.compatibility.description'
         }),
         color: '#F22F46'
@@ -135,7 +135,7 @@ export var Tags = {
     voice: {
         label: translate({ message: 'Voice' }),
         description: translate({
-            message: 'Docusaurus sites using the right-to-left reading direction support.',
+            message: '',
             id: 'showcase.tag.voice.description'
         }),
         color: '#9BB7FB'
@@ -143,7 +143,7 @@ export var Tags = {
     messaging: {
         label: translate({ message: 'Messaging' }),
         description: translate({
-            message: 'Docusaurus sites using the right-to-left reading direction support.',
+            message: '',
             id: 'showcase.tag.messaging.description'
         }),
         color: '#F22F46'
@@ -151,7 +151,7 @@ export var Tags = {
     chat: {
         label: translate({ message: 'Chat' }),
         description: translate({
-            message: 'Docusaurus sites using the right-to-left reading direction support.',
+            message: '',
             id: 'showcase.tag.chat.description'
         }),
         color: '#F0DB4F'
@@ -159,7 +159,7 @@ export var Tags = {
     video: {
         label: translate({ message: 'Video' }),
         description: translate({
-            message: 'Docusaurus sites using the right-to-left reading direction support.',
+            message: '',
             id: 'showcase.tag.video.description'
         }),
         color: '#044CF6'
@@ -167,7 +167,7 @@ export var Tags = {
     fax: {
         label: translate({ message: 'Fax' }),
         description: translate({
-            message: 'Docusaurus sites using the right-to-left reading direction support.',
+            message: '',
             id: 'showcase.tag.fax.description'
         }),
         color: '#F22F46'
