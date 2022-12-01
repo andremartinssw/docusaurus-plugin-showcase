@@ -7,7 +7,7 @@
 /* eslint-disable global-require */
 import { translate } from '@docusaurus/Translate';
 import { sortBy } from '../utils/jsUtils';
-import ArticleList from './articles.json';
+import ArticleList from '/src/data/articles.json';
 // Add sites to this list
 // prettier-ignore
 var Users = ArticleList;

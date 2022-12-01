@@ -10,7 +10,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 // import Image from '@theme/IdealImage';
-import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
+import FavoriteIcon from '../../../../components/svgIcons/FavoriteIcon';
 import { Tags, TagList, } from '../../../../data/users';
 import { sortBy } from '../../../../utils/jsUtils';
 import Tooltip from '../ShowcaseTooltip';
