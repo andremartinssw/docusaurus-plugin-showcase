@@ -88,7 +88,7 @@ module.exports = function (context, options) {
       }
 
       fs.writeFile(
-        '/src/data/articles.json',
+        siteDir + '/src/data/articles.json',
         JSON.stringify(articles, null, 2)
       )
     },
