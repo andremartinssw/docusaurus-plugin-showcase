@@ -12,166 +12,200 @@ import ArticleList from '/src/data/articles.json';
 // prettier-ignore
 var Users = ArticleList;
 export var Tags = {
-    favorite: {
+    "favorite": {
         label: translate({ message: 'Favorite' }),
         description: translate({
-            message: 'Our favorite Docusaurus sites that you must absolutely check out!',
+            message: '',
             id: 'showcase.tag.favorite.description'
         }),
         color: '#e9669e'
     },
-    javascript: {
-        label: translate({ message: 'JavaScript' }),
+    "lang\:javascript": {
+        label: translate({message: 'JavaScript'}),
         description: translate({
-            message: 'Open-Source Docusaurus sites can be useful for inspiration!',
-            id: 'showcase.tag.javascript.description'
+          message: '',
+          id: 'showcase.tag.lang:javascript.description',
         }),
-        color: '#F0DB4F'
-    },
-    nodejs: {
-        label: translate({ message: 'Node.js' }),
+        color: '#F0DB4F',
+      },
+    
+      "lang\:nodejs": {
+        label: translate({message: 'Node.js'}),
         description: translate({
-            message: 'Docusaurus sites associated to a commercial nodejs!',
-            id: 'showcase.tag.nodejs.description'
+          message: '',
+          id: 'showcase.tag.lang:nodejs.description',
         }),
-        color: '#89D42C'
-    },
-    csharp: {
-        label: translate({ message: 'C#/.Net' }),
+        color: '#89D42C',
+      },
+    
+      "lang\:csharp": {
+        label: translate({message: 'C#/.Net'}),
         description: translate({
-            message: 'Beautiful Docusaurus sites, polished and standing out from the initial template!',
-            id: 'showcase.tag.csharp.description'
+          message:
+            '',
+          id: 'showcase.tag.lang:csharp.description',
         }),
-        color: '#1384C8'
-    },
-    go: {
-        label: translate({ message: 'Go' }),
+        color: '#1384C8',
+      },
+    
+      "lang\:go": {
+        label: translate({message: 'Go'}),
         description: translate({
-            message: 'Translated Docusaurus sites using the internationalization support with more than 1 locale.',
-            id: 'showcase.tag.go.description'
+          message:
+            '',
+          id: 'showcase.tag.lang:go.description',
         }),
-        color: '#6AD7E5'
-    },
-    php: {
-        label: translate({ message: 'PHP' }),
+        color: '#6AD7E5',
+      },
+    
+      "lang\:php": {
+        label: translate({message: 'PHP'}),
         description: translate({
-            message: 'Docusaurus sites using the php feature of the docs plugin to manage multiple versions.',
-            id: 'showcase.tag.php.description'
+          message:
+            '',
+          id: 'showcase.tag.lang:php.description',
         }),
-        color: '#6181B6'
-    },
-    react: {
-        label: translate({ message: 'React' }),
+        color: '#6181B6',
+      },
+    
+      "lang\:react": {
+        label: translate({message: 'React'}),
         description: translate({
-            message: 'Very react Docusaurus sites, including many more pages than the average!',
-            id: 'showcase.tag.react.description'
+          message:
+            '',
+          id: 'showcase.tag.lang:react.description',
         }),
-        color: '#53C1DE'
-    },
-    ruby: {
-        label: translate({ message: 'Ruby' }),
+        color: '#53C1DE',
+      },
+    
+      "lang\:ruby": {
+        label: translate({message: 'Ruby'}),
         description: translate({
-            message: 'Docusaurus sites of ruby (formerly Facebook) projects',
-            id: 'showcase.tag.ruby.description'
+          message: '',
+          id: 'showcase.tag.lang:ruby.description',
         }),
-        color: '#D91505'
-    },
-    python: {
-        label: translate({ message: 'Python' }),
+        color: '#D91505', // Facebook blue
+      },
+    
+      "lang\:python": {
+        label: translate({message: 'Python'}),
         description: translate({
-            message: 'python websites, blogs and digital gardens built with Docusaurus',
-            id: 'showcase.tag.python.description'
+          message:
+            '',
+          id: 'showcase.tag.lang:python.description',
         }),
-        color: '#3372A7'
-    },
-    electron: {
-        label: translate({ message: 'Electron' }),
+        color: '#3372A7',
+      },
+    
+      "lang\:electron": {
+        label: translate({message: 'Electron'}),
         description: translate({
-            message: '',
-            id: 'showcase.tag.electron.description'
+          message:
+            '',
+          id: 'showcase.tag.lang:electron.description',
         }),
-        color: '#75A3AB'
-    },
-    relayrealtime: {
-        label: translate({ message: 'Relay Realtime SDK (v3)' }),
+        color: '#75A3AB',
+      },
+    
+      "sdk\:relayrealtime": {
+        label: translate({message: 'Relay Realtime SDK (v3)'}),
         description: translate({
-            message: '',
-            id: 'showcase.tag.relayrealtime.description'
+          message:
+            '',
+          id: 'showcase.tag.sdk:relayrealtime.description',
         }),
-        color: '#044CF6'
-    },
-    relay: {
-        label: translate({ message: 'Relay SDK (v2)' }),
+        color: '#044CF6',
+      },
+    
+      "sdk\:relay": {
+        label: translate({message: 'Relay SDK (v2)'}),
         description: translate({
-            message: '',
-            id: 'showcase.tag.relay.description'
+          message:
+            '',
+          id: 'showcase.tag.sdk:relay.description',
         }),
-        color: '#9BB7FB'
-    },
-    relaybrowser3: {
-        label: translate({ message: 'Relay Browser SDK (v3)' }),
+        color: '#9BB7FB',
+      },
+    
+      "sdk\:relaybrowser3": {
+        label: translate({message: 'Relay Browser SDK (v3)'}),
         description: translate({
-            message: '',
-            id: 'showcase.tag.relaybrowser3.description'
+          message:
+            '',
+          id: 'showcase.tag.sdk:relaybrowser3.description',
         }),
-        color: '#044CF6'
-    },
-    relaybrowser2: {
-        label: translate({ message: 'Relay Browser SDK (v2)' }),
+        color: '#044CF6',
+      },
+    
+      "sdk\:relaybrowser2": {
+        label: translate({message: 'Relay Browser SDK (v2)'}),
         description: translate({
-            message: '',
-            id: 'showcase.tag.relaybrowser2.description'
+          message:
+            '',
+          id: 'showcase.tag.sdk:relaybrowser2.description',
         }),
-        color: '#9BB7FB'
-    },
-    compatibility: {
-        label: translate({ message: 'Compatibility API' }),
+        color: '#9BB7FB',
+      },
+    
+      "sdk\:compatibility": {
+        label: translate({message: 'Compatibility API'}),
         description: translate({
-            message: '',
-            id: 'showcase.tag.compatibility.description'
+          message:
+            '',
+          id: 'showcase.tag.sdk:compatibility.description',
         }),
-        color: '#F22F46'
-    },
-    voice: {
-        label: translate({ message: 'Voice' }),
+        color: '#F22F46',
+      },
+    
+      "product\:voice": {
+        label: translate({message: 'Voice'}),
         description: translate({
-            message: '',
-            id: 'showcase.tag.voice.description'
+          message:
+            '',
+          id: 'showcase.tag.product:voice.description',
         }),
-        color: '#9BB7FB'
-    },
-    messaging: {
-        label: translate({ message: 'Messaging' }),
+        color: '#9BB7FB',
+      },
+    
+      "product\:messaging": {
+        label: translate({message: 'Messaging'}),
         description: translate({
-            message: '',
-            id: 'showcase.tag.messaging.description'
+          message:
+            '',
+          id: 'showcase.tag.product:messaging.description',
         }),
-        color: '#F22F46'
-    },
-    chat: {
-        label: translate({ message: 'Chat' }),
+        color: '#F22F46',
+      },
+    
+      "product\:chat": {
+        label: translate({message: 'Chat'}),
         description: translate({
-            message: '',
-            id: 'showcase.tag.chat.description'
+          message:
+            '',
+          id: 'showcase.tag.product:chat.description',
         }),
-        color: '#F0DB4F'
-    },
-    video: {
-        label: translate({ message: 'Video' }),
+        color: '#F0DB4F',
+      },
+    
+      "product\:video": {
+        label: translate({message: 'Video'}),
         description: translate({
-            message: '',
-            id: 'showcase.tag.video.description'
+          message:
+            '',
+          id: 'showcase.tag.product:video.description',
         }),
-        color: '#044CF6'
-    },
-    fax: {
-        label: translate({ message: 'Fax' }),
+        color: '#044CF6',
+      },
+    
+      "product\:fax": {
+        label: translate({message: 'Fax'}),
         description: translate({
-            message: '',
-            id: 'showcase.tag.fax.description'
+          message:
+            '',
+          id: 'showcase.tag.product:fax.description',
         }),
-        color: '#F22F46'
-    }
+        color: '#F22F46',
+      }
 };
 export var TagList = Object.keys(Tags);
 function sortUsers() {

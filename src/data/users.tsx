@@ -17,25 +17,24 @@ import ArticleList from '/src/data/articles.json'
 // We'll remove inappropriate tags, but it's less likely that we add tags.
 export type TagType =
   | 'favorite'
-  | 'javascript'
-  | 'nodejs'
-  | 'csharp'
-  | 'go'
-  | 'php'
-  | 'react'
-  | 'ruby'
-  | 'python'
-  | 'electron'
-  | 'relayrealtime'
-  | 'relay'
-  | 'relaybrowser3'
-  | 'relaybrowser2'
-  | 'compatibility'
-  | 'voice'
-  | 'messaging'
-  | 'chat'
-  | 'video'
-  | 'fax';
+  | 'lang:javascript'
+  | 'lang:nodejs'
+  | 'lang:csharp'
+  | 'lang:go'
+  | 'lang:php'
+  | 'lang:react'
+  | 'lang:ruby'
+  | 'lang:python'
+  | 'sdk:relayrealtime'
+  | 'sdk:relay'
+  | 'sdk:relaybrowser3'
+  | 'sdk:relaybrowser2'
+  | 'sdk:compatibility'
+  | 'product:voice'
+  | 'product:messaging'
+  | 'product:chat'
+  | 'product:video'
+  | 'product:fax';
 
 
 // Add sites to this list
@@ -58,202 +57,190 @@ export type Tag = {
 };
 
 export const Tags: {[type in TagType]: Tag} = {
-  favorite: {
-    label: translate({message: 'Favorite'}),
+  "favorite": {
+    label: translate({ message: 'Favorite' }),
     description: translate({
-      message:
-        '',
-      id: 'showcase.tag.favorite.description',
+        message: '',
+        id: 'showcase.tag.favorite.description'
     }),
-    color: '#e9669e',
+    color: '#e9669e'
   },
-
-  javascript: {
+  "lang\:javascript": {
     label: translate({message: 'JavaScript'}),
     description: translate({
       message: '',
-      id: 'showcase.tag.javascript.description',
+      id: 'showcase.tag.lang:javascript.description',
     }),
     color: '#F0DB4F',
   },
 
-  nodejs: {
+  "lang\:nodejs": {
     label: translate({message: 'Node.js'}),
     description: translate({
       message: '',
-      id: 'showcase.tag.nodejs.description',
+      id: 'showcase.tag.lang:nodejs.description',
     }),
     color: '#89D42C',
   },
 
-  csharp: {
+  "lang\:csharp": {
     label: translate({message: 'C#/.Net'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.csharp.description',
+      id: 'showcase.tag.lang:csharp.description',
     }),
     color: '#1384C8',
   },
 
-  go: {
+  "lang\:go": {
     label: translate({message: 'Go'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.go.description',
+      id: 'showcase.tag.lang:go.description',
     }),
     color: '#6AD7E5',
   },
 
-  php: {
+  "lang\:php": {
     label: translate({message: 'PHP'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.php.description',
+      id: 'showcase.tag.lang:php.description',
     }),
     color: '#6181B6',
   },
 
-  react: {
+  "lang\:react": {
     label: translate({message: 'React'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.react.description',
+      id: 'showcase.tag.lang:react.description',
     }),
     color: '#53C1DE',
   },
 
-  ruby: {
+  "lang\:ruby": {
     label: translate({message: 'Ruby'}),
     description: translate({
       message: '',
-      id: 'showcase.tag.ruby.description',
+      id: 'showcase.tag.lang:ruby.description',
     }),
     color: '#D91505', // Facebook blue
   },
 
-  python: {
+  "lang\:python": {
     label: translate({message: 'Python'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.python.description',
+      id: 'showcase.tag.lang:python.description',
     }),
     color: '#3372A7',
   },
 
-  electron: {
-    label: translate({message: 'Electron'}),
-    description: translate({
-      message:
-        '',
-      id: 'showcase.tag.electron.description',
-    }),
-    color: '#75A3AB',
-  },
-
-  relayrealtime: {
+  "sdk\:relayrealtime": {
     label: translate({message: 'Relay Realtime SDK (v3)'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.relayrealtime.description',
+      id: 'showcase.tag.sdk:relayrealtime.description',
     }),
     color: '#044CF6',
   },
 
-  relay: {
+  "sdk\:relay": {
     label: translate({message: 'Relay SDK (v2)'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.relay.description',
+      id: 'showcase.tag.sdk:relay.description',
     }),
     color: '#9BB7FB',
   },
 
-  relaybrowser3: {
+  "sdk\:relaybrowser3": {
     label: translate({message: 'Relay Browser SDK (v3)'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.relaybrowser3.description',
+      id: 'showcase.tag.sdk:relaybrowser3.description',
     }),
     color: '#044CF6',
   },
 
-  relaybrowser2: {
+  "sdk\:relaybrowser2": {
     label: translate({message: 'Relay Browser SDK (v2)'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.relaybrowser2.description',
+      id: 'showcase.tag.sdk:relaybrowser2.description',
     }),
     color: '#9BB7FB',
   },
 
-  compatibility: {
+  "sdk\:compatibility": {
     label: translate({message: 'Compatibility API'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.compatibility.description',
+      id: 'showcase.tag.sdk:compatibility.description',
     }),
     color: '#F22F46',
   },
 
-  voice: {
+  "product\:voice": {
     label: translate({message: 'Voice'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.voice.description',
+      id: 'showcase.tag.product:voice.description',
     }),
     color: '#9BB7FB',
   },
 
-  messaging: {
+  "product\:messaging": {
     label: translate({message: 'Messaging'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.messaging.description',
+      id: 'showcase.tag.product:messaging.description',
     }),
     color: '#F22F46',
   },
 
-  chat: {
+  "product\:chat": {
     label: translate({message: 'Chat'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.chat.description',
+      id: 'showcase.tag.product:chat.description',
     }),
     color: '#F0DB4F',
   },
 
-  video: {
+  "product\:video": {
     label: translate({message: 'Video'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.video.description',
+      id: 'showcase.tag.product:video.description',
     }),
     color: '#044CF6',
   },
 
-  fax: {
+  "product\:fax": {
     label: translate({message: 'Fax'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.fax.description',
+      id: 'showcase.tag.product:fax.description',
     }),
     color: '#F22F46',
-  },
+  }
 };
 
 export const TagList = Object.keys(Tags) as TagType[];
