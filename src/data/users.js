@@ -97,16 +97,6 @@ export var Tags = {
         color: '#3372A7',
       },
     
-      "lang\:electron": {
-        label: translate({message: 'Electron'}),
-        description: translate({
-          message:
-            '',
-          id: 'showcase.tag.lang:electron.description',
-        }),
-        color: '#75A3AB',
-      },
-    
       "sdk\:relayrealtime": {
         label: translate({message: 'Relay Realtime SDK (v3)'}),
         description: translate({
