@@ -16,9 +16,12 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 exports.__esModule = true;
 exports.updateDOMColors = exports.getAdjustedColors = exports.darkStorage = exports.lightStorage = exports.DARK_BACKGROUND_COLOR = exports.LIGHT_BACKGROUND_COLOR = exports.DARK_PRIMARY_COLOR = exports.LIGHT_PRIMARY_COLOR = exports.COLOR_SHADES = void 0;
-var color_1 = require("color");
+var color_1 = __importDefault(require("color"));
 var theme_common_1 = require("@docusaurus/theme-common");
 exports.COLOR_SHADES = {
     '--ifm-color-primary': {

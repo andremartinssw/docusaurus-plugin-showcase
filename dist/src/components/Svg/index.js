@@ -1,6 +1,0 @@
-import _extends from"/home/martins/Code/docusaurus-plugin-showcase/node_modules/@babel/runtime/helpers/esm/extends.js";import _objectWithoutPropertiesLoose from"/home/martins/Code/docusaurus-plugin-showcase/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js";var _excluded=["svgClass","colorAttr","children","color","size","viewBox"];/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */import React from'react';import clsx from'clsx';import styles from'./styles.module.css';export default function Svg(props){var svgClass=props.svgClass,colorAttr=props.colorAttr,children=props.children,_props$color=props.color,color=_props$color===void 0?'inherit':_props$color,_props$size=props.size,size=_props$size===void 0?'medium':_props$size,_props$viewBox=props.viewBox,viewBox=_props$viewBox===void 0?'0 0 24 24':_props$viewBox,rest=_objectWithoutPropertiesLoose(props,_excluded);return/*#__PURE__*/React.createElement("svg",_extends({viewBox:viewBox,color:colorAttr,"aria-hidden":true,className:clsx(styles.svgIcon,styles[color],styles[size],svgClass)},rest),children);}
