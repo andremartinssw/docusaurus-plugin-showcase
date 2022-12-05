@@ -40,8 +40,8 @@ function replaceSearchTags(search: string, newTags: TagType[]) {
 }
 
 function ShowcaseTagSelect(
-  {id, icon, label, tag, ...rest}: Props,
-  ref: React.ForwardedRef<HTMLLabelElement>,
+    {id, icon, label, tag, ...rest}: Props,
+    ref: React.ForwardedRef<HTMLLabelElement>,
 ) {
   const location = useLocation();
   const history = useHistory();
@@ -61,35 +61,35 @@ function ShowcaseTagSelect(
     });
   }, [tag, location, history]);
   return (
-    <>
-      <input
-        type="checkbox"
-        id={id}
-        className="screen-reader-only"
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') {
-            toggleTag();
-          }
-        }}
-        onFocus={(e) => {
-          if (e.relatedTarget) {
-            e.target.nextElementSibling?.dispatchEvent(
-              new KeyboardEvent('focus'),
-            );
-          }
-        }}
-        onBlur={(e) => {
-          e.target.nextElementSibling?.dispatchEvent(new KeyboardEvent('blur'));
-        }}
-        onChange={toggleTag}
-        checked={selected}
-        {...rest}
-      />
-      <label ref={ref} htmlFor={id} className={styles.checkboxLabel}>
-        {label}
-        {icon}
-      </label>
-    </>
+      <>
+        <input
+            type="checkbox"
+            id={id}
+            className="screen-reader-only"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                toggleTag();
+              }
+            }}
+            onFocus={(e) => {
+              if (e.relatedTarget) {
+                e.target.nextElementSibling?.dispatchEvent(
+                    new KeyboardEvent('focus'),
+                );
+              }
+            }}
+            onBlur={(e) => {
+              e.target.nextElementSibling?.dispatchEvent(new KeyboardEvent('blur'));
+            }}
+            onChange={toggleTag}
+            checked={selected}
+            {...rest}
+        />
+        <label ref={ref} htmlFor={id} className={styles.checkboxLabel}>
+          {label}
+          {icon}
+        </label>
+      </>
   );
 }
 

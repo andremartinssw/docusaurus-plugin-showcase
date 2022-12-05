@@ -19,7 +19,7 @@ export const OperatorQueryKey = 'operator';
 
 export function readOperator(search: string): Operator {
   return (new URLSearchParams(search).get(OperatorQueryKey) ??
-    'OR') as Operator;
+      'OR') as Operator;
 }
 
 export default function ShowcaseFilterToggle(): JSX.Element {
@@ -45,26 +45,26 @@ export default function ShowcaseFilterToggle(): JSX.Element {
   }, [operator, location, history]);
 
   return (
-    <div>
-      <input
-        type="checkbox"
-        id={id}
-        className="screen-reader-only"
-        aria-label="Toggle between or and and for the tags you selected"
-        onChange={toggleOperator}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') {
-            toggleOperator();
-          }
-        }}
-        checked={operator}
-      />
-      <label htmlFor={id} className={clsx(styles.checkboxLabel, 'shadow--md')}>
-        {/* eslint-disable @docusaurus/no-untranslated-text */}
-        <span className={styles.checkboxLabelOr}>OR</span>
-        <span className={styles.checkboxLabelAnd}>AND</span>
-        {/* eslint-enable @docusaurus/no-untranslated-text */}
-      </label>
-    </div>
+      <div>
+        <input
+            type="checkbox"
+            id={id}
+            className="screen-reader-only"
+            aria-label="Toggle between or and and for the tags you selected"
+            onChange={toggleOperator}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                toggleOperator();
+              }
+            }}
+            checked={operator}
+        />
+        <label htmlFor={id} className={clsx(styles.checkboxLabel, 'shadow--md')}>
+          {/* eslint-disable @docusaurus/no-untranslated-text */}
+          <span className={styles.checkboxLabelOr}>OR</span>
+          <span className={styles.checkboxLabelAnd}>AND</span>
+          {/* eslint-enable @docusaurus/no-untranslated-text */}
+        </label>
+      </div>
   );
 }

@@ -19,14 +19,14 @@
   justify-content: space-around;
   opacity: 0.75;
   transition: opacity var(--ifm-transition-fast)
-    var(--ifm-transition-timing-default);
+  var(--ifm-transition-timing-default);
   box-shadow: var(--ifm-global-shadow-md);
 }
 
 .checkboxLabel:hover {
   opacity: 1;
   box-shadow: var(--ifm-global-shadow-md),
-    0 0 2px 1px var(--ifm-color-primary-dark);
+  0 0 2px 1px var(--ifm-color-primary-dark);
 }
 
 .checkboxLabel::after {
@@ -38,7 +38,7 @@
   border-radius: var(--height);
   background-color: var(--ifm-color-primary-darkest);
   transition: transform var(--ifm-transition-fast)
-    var(--ifm-transition-timing-default);
+  var(--ifm-transition-timing-default);
   transform: translateX(calc(var(--width) / 2 - var(--border)));
 }
 

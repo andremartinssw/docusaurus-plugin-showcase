@@ -1,13 +1,26 @@
+"use strict";
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { __assign } from "tslib";
-import Color from 'color';
-import { createStorageSlot } from '@docusaurus/theme-common';
-export var COLOR_SHADES = {
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+exports.__esModule = true;
+exports.updateDOMColors = exports.getAdjustedColors = exports.darkStorage = exports.lightStorage = exports.DARK_BACKGROUND_COLOR = exports.LIGHT_BACKGROUND_COLOR = exports.DARK_PRIMARY_COLOR = exports.LIGHT_PRIMARY_COLOR = exports.COLOR_SHADES = void 0;
+var color_1 = require("color");
+var theme_common_1 = require("@docusaurus/theme-common");
+exports.COLOR_SHADES = {
     '--ifm-color-primary': {
         adjustment: 0,
         adjustmentInput: '0',
@@ -51,21 +64,22 @@ export var COLOR_SHADES = {
         codeOrder: 6
     }
 };
-export var LIGHT_PRIMARY_COLOR = '#2e8555';
-export var DARK_PRIMARY_COLOR = '#25c2a0';
-export var LIGHT_BACKGROUND_COLOR = '#ffffff';
-export var DARK_BACKGROUND_COLOR = '#181920';
+exports.LIGHT_PRIMARY_COLOR = '#2e8555';
+exports.DARK_PRIMARY_COLOR = '#25c2a0';
+exports.LIGHT_BACKGROUND_COLOR = '#ffffff';
+exports.DARK_BACKGROUND_COLOR = '#181920';
 // sessionStorage allows resetting everything next time users visit the site
-export var lightStorage = createStorageSlot('ifm-theme-colors-light', {
+exports.lightStorage = (0, theme_common_1.createStorageSlot)('ifm-theme-colors-light', {
     persistence: 'sessionStorage'
 });
-export var darkStorage = createStorageSlot('ifm-theme-colors-dark', {
+exports.darkStorage = (0, theme_common_1.createStorageSlot)('ifm-theme-colors-dark', {
     persistence: 'sessionStorage'
 });
-export function getAdjustedColors(shades, baseColor) {
-    return Object.keys(shades).map(function (shade) { return (__assign(__assign({}, shades[shade]), { variableName: shade, hex: Color(baseColor).darken(shades[shade].adjustment).hex() })); });
+function getAdjustedColors(shades, baseColor) {
+    return Object.keys(shades).map(function (shade) { return (__assign(__assign({}, shades[shade]), { variableName: shade, hex: (0, color_1["default"])(baseColor).darken(shades[shade].adjustment).hex() })); });
 }
-export function updateDOMColors(_a, isDarkTheme) {
+exports.getAdjustedColors = getAdjustedColors;
+function updateDOMColors(_a, isDarkTheme) {
     var shades = _a.shades, baseColor = _a.baseColor, background = _a.background;
     var styleSheet = Array.from(document.styleSheets).find(function (item) { var _a; return (_a = item.href) === null || _a === void 0 ? void 0 : _a.match(/styles(?:\.[\da-f]+)?\.css/); });
     var rules = Array.from(styleSheet.cssRules);
@@ -84,4 +98,4 @@ export function updateDOMColors(_a, isDarkTheme) {
         .join('\n'), "\n  --ifm-background-color: ").concat(background, ";\n}");
     styleSheet.insertRule(overrideStyle, styleSheet.cssRules.length - 1);
 }
-//# sourceMappingURL=colorUtils.js.map
+exports.updateDOMColors = updateDOMColors;

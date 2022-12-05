@@ -18,37 +18,37 @@ interface Props {
 }
 
 export default function Tooltip({
-  children,
-  id,
-  anchorEl,
-  text,
-}: Props): JSX.Element {
+                                  children,
+                                  id,
+                                  anchorEl,
+                                  text,
+                                }: Props): JSX.Element {
   const [open, setOpen] = useState(false);
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
-    null,
+      null,
   );
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
   const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null);
   const [container, setContainer] = useState<Element | null>(null);
   const {styles: popperStyles, attributes} = usePopper(
-    referenceElement,
-    popperElement,
-    {
-      modifiers: [
-        {
-          name: 'arrow',
-          options: {
-            element: arrowElement,
+      referenceElement,
+      popperElement,
+      {
+        modifiers: [
+          {
+            name: 'arrow',
+            options: {
+              element: arrowElement,
+            },
           },
-        },
-        {
-          name: 'offset',
-          options: {
-            offset: [0, 8],
+          {
+            name: 'offset',
+            options: {
+              offset: [0, 8],
+            },
           },
-        },
-      ],
-    },
+        ],
+      },
   );
 
   const timeout = useRef<number | null>(null);
@@ -114,32 +114,32 @@ export default function Tooltip({
   }, [referenceElement, text]);
 
   return (
-    <>
-      {React.cloneElement(children, {
-        ref: setReferenceElement,
-        'aria-describedby': open ? tooltipId : undefined,
-      })}
-      {container
-        ? ReactDOM.createPortal(
-            open && (
-              <div
-                id={tooltipId}
-                role="tooltip"
-                ref={setPopperElement}
-                className={styles.tooltip}
-                style={popperStyles.popper}
-                {...attributes.popper}>
-                {text}
-                <span
-                  ref={setArrowElement}
-                  className={styles.tooltipArrow}
-                  style={popperStyles.arrow}
-                />
-              </div>
-            ),
-            container,
-          )
-        : container}
-    </>
+      <>
+        {React.cloneElement(children, {
+          ref: setReferenceElement,
+          'aria-describedby': open ? tooltipId : undefined,
+        })}
+        {container
+            ? ReactDOM.createPortal(
+                open && (
+                    <div
+                        id={tooltipId}
+                        role="tooltip"
+                        ref={setPopperElement}
+                        className={styles.tooltip}
+                        style={popperStyles.popper}
+                        {...attributes.popper}>
+                      {text}
+                      <span
+                          ref={setArrowElement}
+                          className={styles.tooltipArrow}
+                          style={popperStyles.arrow}
+                      />
+                    </div>
+                ),
+                container,
+            )
+            : container}
+      </>
   );
 }

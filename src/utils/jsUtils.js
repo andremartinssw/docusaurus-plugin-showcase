@@ -1,12 +1,23 @@
+"use strict";
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { __spreadArray } from "tslib";
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
+exports.__esModule = true;
+exports.toggleListItem = exports.sortBy = void 0;
 // Inspired by https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_sortby-and-_orderby
-export function sortBy(array, getter) {
+function sortBy(array, getter) {
     var sortedArray = __spreadArray([], array, true);
     sortedArray.sort(function (a, b) {
         // eslint-disable-next-line no-nested-ternary
@@ -14,7 +25,8 @@ export function sortBy(array, getter) {
     });
     return sortedArray;
 }
-export function toggleListItem(list, item) {
+exports.sortBy = sortBy;
+function toggleListItem(list, item) {
     var itemIndex = list.indexOf(item);
     if (itemIndex === -1) {
         return list.concat(item);
@@ -23,4 +35,4 @@ export function toggleListItem(list, item) {
     newList.splice(itemIndex, 1);
     return newList;
 }
-//# sourceMappingURL=jsUtils.js.map
+exports.toggleListItem = toggleListItem;

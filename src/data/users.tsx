@@ -9,7 +9,7 @@
 
 import {translate} from '@docusaurus/Translate';
 import {sortBy} from '../utils/jsUtils';
-import ArticleList from '/src/data/articles.json'
+import ArticleList from '@site/src/data/articles.json'
 
 // LIST OF AVAILABLE TAGS
 // Available tags to assign to a showcase guide
