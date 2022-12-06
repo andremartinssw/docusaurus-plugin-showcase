@@ -109,7 +109,7 @@ function filterUsers(users, selectedTags, operator, searchName) {
 }
 function useFilteredUsers() {
     var location = (0, router_1.useLocation)();
-    var _a = (0, react_1.useState)('OR'), operator = _a[0], setOperator = _a[1];
+    var _a = (0, react_1.useState)('AND'), operator = _a[0], setOperator = _a[1];
     // On SSR / first mount (hydration) no tag is selected
     var _b = (0, react_1.useState)([]), selectedTags = _b[0], setSelectedTags = _b[1];
     var _c = (0, react_1.useState)(null), searchName = _c[0], setSearchName = _c[1];
