@@ -13,7 +13,7 @@ import {useHistory, useLocation} from '@docusaurus/router';
 import {usePluralForm} from '@docusaurus/theme-common';
 
 import Layout from '@theme/Layout';
-import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
+import FavoriteIcon from '../../components/svgIcons/FavoriteIcon';
 import {
   sortedUsers,
   Tags,
