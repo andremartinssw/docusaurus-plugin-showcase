@@ -1,18 +1,20 @@
 {
+  // This file is not used in compilation. It is here just for a nice editor experience.
+  "extends": "@tsconfig/docusaurus/tsconfig.json",
   "compilerOptions": {
-    "allowJs": true,
-    "esModuleInterop": true,
-    "jsx": "react",
-    "types": ["jest", "node", "@docusaurus/module-type-aliases", "@docusaurus/theme-classic"],
+    "lib": ["DOM", "ESNext"],
     "baseUrl": "./src",
-    "rootDir": "./src",
     "resolveJsonModule": true,
-    "importHelpers": true,
-    "declaration": true,
-    "sourceMap": true,
+
+    // Duplicated from the root config, because TS does not support extending
+    // multiple configs and we want to dogfood the @tsconfig/docusaurus one
     "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": false,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
     "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": true,
     "strict": true,
     "alwaysStrict": true,
     "noImplicitAny": true,
@@ -21,10 +23,11 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
+    "useUnknownInCatchVariables": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "importsNotUsedAsValues": "remove",
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "noEmit": false,
 
     // This is important. We run `yarn tsc` in website so we can catch issues
@@ -32,6 +35,7 @@
     // imported, invalid semantics...). Because we don't have end-to-end type
     // tests, removing this would make things much harder to catch.
     "skipLibCheck": true,
+    "types": ["jest"],
     "paths": {
       "@site/*": ["../*"]
     }
