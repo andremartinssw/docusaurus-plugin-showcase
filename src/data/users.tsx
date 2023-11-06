@@ -17,19 +17,21 @@ import ArticleList from '@site/src/data/articles.json'
 // We'll remove inappropriate tags, but it's less likely that we add tags.
 export type TagType =
   | 'favorite'
-  | 'lang:javascript'
-  | 'lang:nodejs'
-  | 'lang:csharp'
-  | 'lang:go'
-  | 'lang:php'
-  | 'lang:react'
-  | 'lang:ruby'
-  | 'lang:python'
+  | 'language:javascript'
+  | 'language:nodejs'
+  | 'language:csharp'
+  | 'language:go'
+  | 'language:php'
+  | 'language:react'
+  | 'language:ruby'
+  | 'language:python'
+  | 'sdk:swml'
   | 'sdk:relayrealtime'
   | 'sdk:relay'
   | 'sdk:relaybrowser3'
   | 'sdk:relaybrowser2'
   | 'sdk:compatibility'
+  | 'product:ai'
   | 'product:voice'
   | 'product:messaging'
   | 'product:chat'
@@ -65,81 +67,91 @@ export const Tags: {[type in TagType]: Tag} = {
     }),
     color: '#e9669e'
   },
-  "lang\:javascript": {
+  "language\:javascript": {
     label: translate({message: 'JavaScript'}),
     description: translate({
       message: '',
-      id: 'showcase.tag.lang:javascript.description',
+      id: 'showcase.tag.language:javascript.description',
     }),
     color: '#F0DB4F',
   },
 
-  "lang\:nodejs": {
+  "language\:nodejs": {
     label: translate({message: 'Node.js'}),
     description: translate({
       message: '',
-      id: 'showcase.tag.lang:nodejs.description',
+      id: 'showcase.tag.language:nodejs.description',
     }),
     color: '#89D42C',
   },
 
-  "lang\:csharp": {
+  "language\:csharp": {
     label: translate({message: 'C#/.Net'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.lang:csharp.description',
+      id: 'showcase.tag.language:csharp.description',
     }),
     color: '#1384C8',
   },
 
-  "lang\:go": {
+  "language\:go": {
     label: translate({message: 'Go'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.lang:go.description',
+      id: 'showcase.tag.language:go.description',
     }),
     color: '#6AD7E5',
   },
 
-  "lang\:php": {
+  "language\:php": {
     label: translate({message: 'PHP'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.lang:php.description',
+      id: 'showcase.tag.language:php.description',
     }),
     color: '#6181B6',
   },
 
-  "lang\:react": {
+  "language\:react": {
     label: translate({message: 'React'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.lang:react.description',
+      id: 'showcase.tag.language:react.description',
     }),
     color: '#53C1DE',
   },
 
-  "lang\:ruby": {
+  "language\:ruby": {
     label: translate({message: 'Ruby'}),
     description: translate({
       message: '',
-      id: 'showcase.tag.lang:ruby.description',
+      id: 'showcase.tag.language:ruby.description',
     }),
     color: '#D91505', // Facebook blue
   },
 
-  "lang\:python": {
+  "language\:python": {
     label: translate({message: 'Python'}),
     description: translate({
       message:
         '',
-      id: 'showcase.tag.lang:python.description',
+      id: 'showcase.tag.language:python.description',
     }),
     color: '#3372A7',
+  },
+
+  "sdk\:swml": {
+    label: translate({message: 'SWML'}),
+    description: translate({
+      message:
+        '',
+      id: 'showcase.tag.sdk:swml.description',
+    }),
+    color: '#F22F46',
   },
 
   "sdk\:relayrealtime": {
@@ -190,6 +202,16 @@ export const Tags: {[type in TagType]: Tag} = {
       id: 'showcase.tag.sdk:compatibility.description',
     }),
     color: '#F22F46',
+  },
+
+  "product\:ai": {
+    label: translate({message: 'AI'}),
+    description: translate({
+      message:
+        '',
+      id: 'showcase.tag.product:ai.description',
+    }),
+    color: '#F0DB4F',
   },
 
   "product\:voice": {

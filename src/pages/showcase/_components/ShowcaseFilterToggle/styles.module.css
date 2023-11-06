@@ -14,7 +14,7 @@
   height: var(--height);
   position: relative;
   border-radius: var(--height);
-  border: var(--border) solid var(--ifm-color-primary-darkest);
+  border: var(--border) solid var(--ifm-color-primary);
   cursor: pointer;
   justify-content: space-around;
   opacity: 0.75;
