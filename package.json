@@ -1,15 +1,10 @@
 {
   "name": "docusaurus-plugin-showcase",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "lint": "tsdx lint src test",
-    "format": "tsdx lint src test --fix",
-    "prepare": "tsdx build && husky install"
+    "build": "babel ./src --out-dir dist --extensions '.tsx','.js' --ignore 'node_modules','dist'"
   },
   "license": "MIT",
   "peerDependencies": {
@@ -30,9 +25,11 @@
     "@types/popper.js": "^1.11.0",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.2",
-    "husky": "^8.0.3",
-    "tsdx": "^0.14.1",
     "typescript": "^4.9.3",
-    "webpack": "^5.75.0"
+    "webpack": "^5.75.0",
+    "babel-loader": "8.3.0",
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2"
   }
 }
