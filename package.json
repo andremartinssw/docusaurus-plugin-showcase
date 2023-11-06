@@ -1,10 +1,10 @@
 {
   "name": "docusaurus-plugin-showcase",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel . --out-dir dist --extensions '.tsx','.js' --ignore 'node_modules','dist'"
+    "build": "tsc --build"
   },
   "license": "MIT",
   "peerDependencies": {

@@ -5,7 +5,8 @@
     "lib": ["DOM", "ESNext"],
     "baseUrl": "./src",
     "resolveJsonModule": true,
-
+    "rootDir": "./src",
+    "incremental": true,
     // Duplicated from the root config, because TS does not support extending
     // multiple configs and we want to dogfood the @tsconfig/docusaurus one
     "allowUnreachableCode": false,
@@ -29,7 +30,7 @@
     "importsNotUsedAsValues": "remove",
     "moduleResolution": "NodeNext",
     "noEmit": false,
-
+    "outDir": "dist",
     // This is important. We run `yarn tsc` in website so we can catch issues
     // with our declaration files (mostly names that are forgotten to be
     // imported, invalid semantics...). Because we don't have end-to-end type
@@ -40,5 +41,6 @@
       "@site/*": ["../*"]
     }
   },
+  "include": ["src"],
   "exclude": ["**/node_modules/**"]
 }
