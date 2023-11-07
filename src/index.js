@@ -56,7 +56,7 @@ module.exports = function(context, options) {
 
             addRoute({
                 path: "/showcase",
-                component: "docusaurus-plugin-showcase/src/pages/showcase",
+                component: "docusaurus-plugin-showcase/dist/pages/showcase",
                 exact: true,
             });
         },

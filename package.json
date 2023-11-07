@@ -1,13 +1,14 @@
 {
   "name": "docusaurus-plugin-showcase",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc --build"
+    "build": "tsc --build && npm run copy-files",
+    "copy-files": "cd src && find . -type f -iname '*.css' -ls -exec cp {} ../dist/{} \\;"
   },
   "license": "MIT",
   "peerDependencies": {
