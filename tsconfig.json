@@ -6,7 +6,6 @@
     "baseUrl": "./src",
     "resolveJsonModule": true,
     "rootDir": "./src",
-    "incremental": true,
     // Duplicated from the root config, because TS does not support extending
     // multiple configs and we want to dogfood the @tsconfig/docusaurus one
     "allowUnreachableCode": false,

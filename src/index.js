@@ -7,13 +7,7 @@ const path = require("path");
 const DEFAULT_OPTIONS = {
     include: "**/*.{md,mdx}", // Extensions to include.
     ignore: [
-        "**/node_modules/**",
-        "**/sdks/reference/**",
-        "**/guides/administration/guides/signalwire-space/**",
-        "**/administration/guides/signalwire-integrations/**",
-        "**/compatibility-api/xml/**",
-        "**/cantina/**",
-        "**/docs/sdks/**",
+        "**/node_modules/**"
     ],
     path: "docs", // Path to data on filesystem, relative to site dir.
     routeBasePath: "docs", // URL Route.
@@ -22,6 +16,10 @@ const DEFAULT_OPTIONS = {
 let articles = [];
 
 module.exports = function(context, options) {
+    
+    // options takes precendence over DEFAULT_OPTIONS
+    const pluginOptions = { ...DEFAULT_OPTIONS, ...options };
+
     return {
         name: "docusaurus-plugin-showcase",
 
@@ -33,11 +31,11 @@ module.exports = function(context, options) {
             const docsFiles = await fg(
                 path.join(
                     siteDir,
-                    DEFAULT_OPTIONS.path,
-                    DEFAULT_OPTIONS.include
+                    pluginOptions.path,
+                    pluginOptions.include
                 ),
                 {
-                    ignore: DEFAULT_OPTIONS.ignore,
+                    ignore: pluginOptions.ignore,
                 }
             );
 
@@ -120,7 +118,7 @@ module.exports = function(context, options) {
             } else {
                 let newPath = filePath
                     .replace(siteDir, "")
-                    .replace(DEFAULT_OPTIONS.path + "/", "")
+                    .replace(pluginOptions.path + "/", "")
                     .replace("/index.mdx", "");
 
                 article.website = newPath;
@@ -138,15 +136,28 @@ module.exports = function(context, options) {
             const green = "\x1b[32m";
 
             if (missingTags || missingTitle || missingDescription) {
-                console.log(red + "  ✘ " + filePath + reset);
-                missingTags ? console.log(red + "    - Tags: ✘" + reset) : "";
-                missingTitle ? console.log(red + "    - Title: ✘" + reset) : "";
-                missingDescription ? console.log(red + "    - Description: ✘" + reset) : "";
+                this.logWithColor("red", "  ✘ " + filePath);
+                missingTags ? this.logWithColor("red", "    - Tags: ✘") : "";
+                missingTitle ? this.logWithColor("red", "    - Title: ✘") : "";
+                missingDescription ? this.logWithColor("red", "    - Description: ✘") : "";
                 return;
             } else {
-                console.log(green + "  ✔ " + filePath + reset);
+                this.logWithColor("green", "  ✔ " + filePath);
                 articles.push(article);
             }
+        },
+
+        logWithColor(color, text) {
+            const reset = "\x1b[0m";
+            let colorAscii = "\x1b[0m";
+
+            if (color == 'green') {
+                colorAscii = "\x1b[32m";
+            } else if (color == 'red') {
+                colorAscii = "\x1b[31m";
+            }
+
+            console.log(colorAscii + text + reset)
         },
 
         createExcerptWithoutHeading(articleContent) {
