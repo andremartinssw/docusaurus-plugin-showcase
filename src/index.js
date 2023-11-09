@@ -11,6 +11,7 @@ const DEFAULT_OPTIONS = {
     ],
     path: "docs", // Path to data on filesystem, relative to site dir.
     routeBasePath: "docs", // URL Route.
+    onlyLogFailedAttempts: false
 };
 
 let articles = [];
@@ -129,12 +130,6 @@ module.exports = function(context, options) {
                 article.source = frontMatter["x-custom"]["repo"];
             }
 
-            console.log("\n");
-
-            const reset = "\x1b[0m";
-            const red = "\x1b[31m";
-            const green = "\x1b[32m";
-
             if (missingTags || missingTitle || missingDescription) {
                 this.logWithColor("red", "  ✘ " + filePath);
                 missingTags ? this.logWithColor("red", "    - Tags: ✘") : "";
@@ -142,7 +137,11 @@ module.exports = function(context, options) {
                 missingDescription ? this.logWithColor("red", "    - Description: ✘") : "";
                 return;
             } else {
-                this.logWithColor("green", "  ✔ " + filePath);
+                if (pluginOptions.onlyLogFailedAttempts) {
+                    // Don't do anything
+                } else {
+                    this.logWithColor("green", "  ✔ " + filePath);
+                }
                 articles.push(article);
             }
         },
