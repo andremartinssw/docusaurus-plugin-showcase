@@ -59,7 +59,7 @@ function ShowcaseCardTag({tags}: {tags: TagType[]}) {
 
 function ShowcaseCard({user}: {user: User}) {
     return (
-        <li key={user.title} className="card shadow--md">
+        <li key={user.title} className={`card ${styles.cardBoxShadow}`}>
             <div className="card__body">
                 <div className={clsx(styles.showcaseCardHeader)}>
                     <h4 className={styles.showcaseCardTitle}>
