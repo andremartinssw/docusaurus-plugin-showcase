@@ -161,7 +161,7 @@ function ShowcaseFilters() {
             <div className={clsx('margin-bottom--sm', styles.filterCheckbox)}>
                 <div>
                     <h2>
-                        <Translate id="showcase.filters.title">Filters</Translate>
+                        <Translate id="showcase.filters.title">SignalWire Guide Showcase</Translate>
                     </h2>
                     <span>{siteCountPlural(filteredUsers.length)}</span>
                 </div>
@@ -416,7 +416,7 @@ export default function Showcase(): JSX.Element {
   return (
       <Layout>
         <main className="margin-vert--lg">
-          <ShowcaseHeader />
+          {/* <ShowcaseHeader /> */}
           <ShowcaseFilters />
           <ShowcaseCards />
         </main>
