@@ -78,8 +78,9 @@ function filterUsers(
 ) {
   if (searchName) {
     // eslint-disable-next-line no-param-reassign
-    users = users.filter((user) =>
-        user.title.toLowerCase().includes(searchName.toLowerCase()),
+    users = users.filter((user) => 
+        user.title.toLowerCase().includes(searchName.toLowerCase()) ||
+        user.description.toLowerCase().includes(searchName.toLowerCase()),
     );
   }
   if (selectedTags.length === 0) {
@@ -303,6 +304,7 @@ function SearchBar() {
   const [value, setValue] = useState<string | null>(null);
   useEffect(() => {
     setValue(readSearchName(location.search));
+    document.getElementById('searchbar')?.focus();
   }, [location]);
   return (
       <div className={styles.searchContainer}>
