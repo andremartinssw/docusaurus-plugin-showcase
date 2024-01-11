@@ -44,6 +44,10 @@ module.exports = function(context, options) {
                 await this.processMetadata(filePath, siteDir);
             }
 
+            if (!fs.existsSync(siteDir + "/src/data")) {
+                fs.mkdirSync(siteDir + "/src/data", { recursive: true });
+            }
+
             fs.writeFile(
                 siteDir + "/src/data/articles.json",
                 JSON.stringify(articles, null, 2)
@@ -55,7 +59,7 @@ module.exports = function(context, options) {
 
             addRoute({
                 path: "/showcase",
-                component: "docusaurus-plugin-showcase/dist/pages/showcase",
+                component: "@site/plugins/docusaurus-plugin-showcase/dist/pages/showcase",
                 exact: true,
             });
         },
