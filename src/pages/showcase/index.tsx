@@ -15,12 +15,14 @@ import {usePluralForm} from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
 import FavoriteIcon from '../../components/svgIcons/FavoriteIcon';
 import {
-  sortedUsers,
-  Tags,
-  TagList,
-  type User,
+  sortedArticles,
+  type Article,
+} from '../../data/articles';
+import { 
   type TagType,
-} from '../../data/users';
+  TagList, 
+  Tags
+} from '../../data/Tags';
 import ShowcaseTagSelect, {
   readSearchTags,
 } from './_components/ShowcaseTagSelect';
@@ -38,13 +40,13 @@ const DESCRIPTION = translate({
   message: "This is SignalWire's list of guides for all products and all languages.",
 });
 
-type UserState = {
+type ArticleState = {
   scrollTopPosition: number;
   focusedElementId: string | undefined;
 };
 
-function restoreUserState(userState: UserState | null) {
-  const {scrollTopPosition, focusedElementId} = userState ?? {
+function restoreArticleState(articleState: ArticleState | null) {
+  const {scrollTopPosition, focusedElementId} = articleState ?? {
     scrollTopPosition: 0,
     focusedElementId: undefined,
   };
@@ -53,7 +55,7 @@ function restoreUserState(userState: UserState | null) {
   window.scrollTo({top: scrollTopPosition});
 }
 
-export function prepareUserState(): UserState | undefined {
+export function prepareArticleState(): ArticleState | undefined {
   if (ExecutionEnvironment.canUseDOM) {
     return {
       scrollTopPosition: window.scrollY,
@@ -70,35 +72,35 @@ function readSearchName(search: string) {
   return new URLSearchParams(search).get(SearchNameQueryKey);
 }
 
-function filterUsers(
-    users: User[],
+function filterArticles(
+    articles: Article[],
     selectedTags: TagType[],
     operator: Operator,
     searchName: string | null,
 ) {
   if (searchName) {
     // eslint-disable-next-line no-param-reassign
-    users = users.filter((user) => 
-        user.title.toLowerCase().includes(searchName.toLowerCase()) ||
-        user.description.toLowerCase().includes(searchName.toLowerCase()),
+    articles = articles.filter((article) => 
+        article.title.toLowerCase().includes(searchName.toLowerCase()) ||
+        article.description.toLowerCase().includes(searchName.toLowerCase()),
     );
   }
   if (selectedTags.length === 0) {
-    return users;
+    return articles;
   }
-  return users.filter((user) => {
-    if (user.tags.length === 0) {
+  return articles.filter((article) => {
+    if (article.tags.length === 0) {
       return false;
     }
     if (operator === 'AND') {
-      return selectedTags.every((tag) => user.tags.includes(tag));
+      return selectedTags.every((tag) => article.tags.includes(tag));
     }
-    return selectedTags.some((tag) => user.tags.includes(tag));
+    return selectedTags.some((tag) => article.tags.includes(tag));
   });
 }
 
-function useFilteredUsers() {
-  const location = useLocation<UserState>();
+function useFilteredArticles() {
+  const location = useLocation<ArticleState>();
   const [operator, setOperator] = useState<Operator>('AND');
   // On SSR / first mount (hydration) no tag is selected
   const [selectedTags, setSelectedTags] = useState<TagType[]>([]);
@@ -109,11 +111,11 @@ function useFilteredUsers() {
     setSelectedTags(readSearchTags(location.search));
     setOperator(readOperator(location.search));
     setSearchName(readSearchName(location.search));
-    restoreUserState(location.state);
+    restoreArticleState(location.state);
   }, [location]);
 
   return useMemo(
-      () => filterUsers(sortedUsers, selectedTags, operator, searchName),
+      () => filterArticles(sortedArticles, selectedTags, operator, searchName),
       [selectedTags, operator, searchName],
   );
 }
@@ -154,7 +156,7 @@ function useSiteCountPlural() {
 }
 
 function ShowcaseFilters() {
-  const filteredUsers = useFilteredUsers();
+  const filteredArticles = useFilteredArticles();
   const siteCountPlural = useSiteCountPlural();
     let FilteredTagList;
     return (
@@ -164,7 +166,7 @@ function ShowcaseFilters() {
                     <h2>
                         <Translate id="showcase.filters.title">SignalWire Guide Showcase</Translate>
                     </h2>
-                    <span>{siteCountPlural(filteredUsers.length)}</span>
+                    <span>{siteCountPlural(filteredArticles.length)}</span>
                 </div>
                 <ShowcaseFilterToggle/>
             </div>
@@ -291,11 +293,11 @@ function ShowcaseFilters() {
     );
 }
 
-const favoriteUsers = sortedUsers.filter((user) =>
-    user.tags.includes('favorite'),
+const favoriteArticles = sortedArticles.filter((article) =>
+    article.tags.includes('favorite'),
 );
-const otherUsers = sortedUsers.filter(
-    (user) => !user.tags.includes('favorite'),
+const otherArticles = sortedArticles.filter(
+    (article) => !article.tags.includes('favorite'),
 );
 
 function SearchBar() {
@@ -325,7 +327,7 @@ function SearchBar() {
               history.push({
                 ...location,
                 search: newSearch.toString(),
-                state: prepareUserState(),
+                state: prepareArticleState(),
               });
               setTimeout(() => {
                 document.getElementById('searchbar')?.focus();
@@ -337,14 +339,14 @@ function SearchBar() {
 }
 
 function ShowcaseCards() {
-  const filteredUsers = useFilteredUsers();
+  const filteredArticles = useFilteredArticles();
 
-  if (filteredUsers.length === 0) {
+  if (filteredArticles.length === 0) {
     return (
         <section className="margin-top--lg margin-bottom--xl">
           <div className="container padding-vert--md text--center">
             <h2>
-              <Translate id="showcase.usersList.noResult">No result</Translate>
+              <Translate id="showcase.articlesList.noResult">No result</Translate>
             </h2>
             <SearchBar />
           </div>
@@ -354,7 +356,7 @@ function ShowcaseCards() {
 
   return (
       <section className="margin-top--lg margin-bottom--xl">
-        {filteredUsers.length === sortedUsers.length ? (
+        {filteredArticles.length === sortedArticles.length ? (
             <>
               <div className={styles.showcaseFavorite}>
                 <div className="container">
@@ -377,19 +379,19 @@ function ShowcaseCards() {
                           'clean-list',
                           styles.showcaseList,
                       )}>
-                    {favoriteUsers.map((user) => (
-                        <ShowcaseCard key={user.title} user={user} />
+                    {favoriteArticles.map((article) => (
+                        <ShowcaseCard key={article.title} article={article} />
                     ))}
                   </ul>
                 </div>
               </div>
               <div className="container margin-top--lg">
                 <h2 className={styles.showcaseHeader}>
-                  <Translate id="showcase.usersList.allUsers">All guides</Translate>
+                  <Translate id="showcase.articlesList.allArticles">All guides</Translate>
                 </h2>
                 <ul className={clsx('clean-list', styles.showcaseList)}>
-                  {otherUsers.map((user) => (
-                      <ShowcaseCard key={user.title} user={user} />
+                  {otherArticles.map((article) => (
+                      <ShowcaseCard key={article.title} article={article} />
                   ))}
                 </ul>
               </div>
@@ -404,8 +406,8 @@ function ShowcaseCards() {
                 <SearchBar />
               </div>
               <ul className={clsx('clean-list', styles.showcaseList)}>
-                {filteredUsers.map((user) => (
-                    <ShowcaseCard key={user.title} user={user} />
+                {filteredArticles.map((article) => (
+                    <ShowcaseCard key={article.title} article={article} />
                 ))}
               </ul>
             </div>

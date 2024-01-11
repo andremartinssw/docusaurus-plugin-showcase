@@ -15,9 +15,8 @@ import React, {
 } from 'react';
 import {useHistory, useLocation} from '@docusaurus/router';
 import {toggleListItem} from '../../../../utils/jsUtils';
-import type {TagType} from '../../../../data/users';
-
-import {prepareUserState} from '../../index';
+import { type TagType } from 'data/Tags';
+import {prepareArticleState} from '../../index';
 import styles from './styles.module.css';
 
 interface Props extends ComponentProps<'input'> {
@@ -57,7 +56,7 @@ function ShowcaseTagSelect(
     history.push({
       ...location,
       search: newSearch,
-      state: prepareUserState(),
+      state: prepareArticleState(),
     });
   }, [tag, location, history]);
   return (

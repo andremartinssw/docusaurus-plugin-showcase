@@ -11,12 +11,14 @@ import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import FavoriteIcon from '../../../../components/svgIcons/FavoriteIcon';
 import {
-    Tags,
-    TagList,
+    type Article,
+} from '../../../../data/articles';
+import {
     type TagType,
-    type User,
     type Tag,
-} from '../../../../data/users';
+    TagList,
+    Tags
+} from '../../../../data/Tags';
 import {sortBy} from '../../../../utils/jsUtils';
 import Tooltip from '../ShowcaseTooltip';
 import styles from './styles.module.css';
@@ -57,22 +59,22 @@ function ShowcaseCardTag({tags}: {tags: TagType[]}) {
     );
 }
 
-function ShowcaseCard({user}: {user: User}) {
+function ShowcaseCard({article}: {article: Article}) {
     return (
-        <li key={user.title} className={`card ${styles.cardBoxShadow}`}>
+        <li key={article.title} className={`card ${styles.cardBoxShadow}`}>
             <div className="card__body">
                 <div className={clsx(styles.showcaseCardHeader)}>
                     <h4 className={styles.showcaseCardTitle}>
-                        <Link href={user.website} className={styles.showcaseCardLink}>
-                            {user.title}
+                        <Link href={article.website} className={styles.showcaseCardLink}>
+                            {article.title}
                         </Link>
                     </h4>
-                    {user.tags.includes('favorite') && (
+                    {article.tags.includes('favorite') && (
                         <FavoriteIcon svgClass={styles.svgIconFavorite} size="small" />
                     )}
-                    {user.source && (
+                    {article.source && (
                         <Link
-                            href={user.source}
+                            href={article.source}
                             className={clsx(
                                 'button button--secondary button--sm',
                                 styles.showcaseCardSrcBtn,
@@ -81,10 +83,10 @@ function ShowcaseCard({user}: {user: User}) {
                         </Link>
                     )}
                 </div>
-                <p className={styles.showcaseCardBody}>{user.description}</p>
+                <p className={styles.showcaseCardBody}>{article.description}</p>
             </div>
             <ul className={clsx('card__footer', styles.cardFooter)}>
-                <ShowcaseCardTag tags={user.tags} />
+                <ShowcaseCardTag tags={article.tags} />
             </ul>
         </li>
     );

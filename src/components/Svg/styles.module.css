@@ -6,7 +6,7 @@
  */
 
  .svgIcon {
-    user-select: none;
+    article-select: none;
     width: 1em;
     height: 1em;
     display: inline-block;
