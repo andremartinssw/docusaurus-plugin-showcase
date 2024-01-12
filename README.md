@@ -5,8 +5,19 @@ From the root of your Docusaurus project:
 ```bash
 cd plugins
 git clone https://github.com/andremartinssw/docusaurus-plugin-showcase.git
-cd docusaurus-plugin-showcase
-npm install
+```
+
+Add the plugin to your `package.json`:
+```json
+{
+    ...
+    "dependencies": {
+        ...
+        "docusaurus-plugin-showcase": "./plugins/docusaurus-plugin-showcase",
+        ...
+    }
+    ...
+}
 ```
 
 Modify your `docusaurus.config.js` to load the plugin:
@@ -15,7 +26,7 @@ Modify your `docusaurus.config.js` to load the plugin:
     plugins: [
         'some-other-plugin',
         [
-            './plugins/docusaurus-plugin-showcase',
+            'docusaurus-plugin-showcase',
             {
                 include: "**/*.{md,mdx}",
                 ignore: [
