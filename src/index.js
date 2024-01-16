@@ -1,4 +1,7 @@
-const { parseMarkdownString } = require("@docusaurus/utils");
+const { 
+    parseMarkdownFile,
+    DEFAULT_PARSE_FRONT_MATTER 
+} = require("@docusaurus/utils");
 
 const fs = require("fs-extra");
 const fg = require("fast-glob");
@@ -67,12 +70,15 @@ module.exports = function(context, options) {
         async processMetadata(filePath, siteDir) {
             const fileStringPromise = fs.readFile(filePath, "utf-8");
             const contents = await fileStringPromise;
+            
             const {
-                frontMatter = {},
+                frontMatter,
                 content,
                 contentTitle,
-            } = parseMarkdownString(contents, {
-                removeContentTitle: true,
+            } = await parseMarkdownFile({
+                fileContent: contents,
+                filePath,
+                parseFrontMatter: DEFAULT_PARSE_FRONT_MATTER,
             });
 
             let {
