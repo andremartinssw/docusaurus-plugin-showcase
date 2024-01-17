@@ -101,7 +101,7 @@ function filterArticles(
 
 function useFilteredArticles() {
   const location = useLocation<ArticleState>();
-  const [operator, setOperator] = useState<Operator>('AND');
+  const [operator, setOperator] = useState<Operator>('OR');
   // On SSR / first mount (hydration) no tag is selected
   const [selectedTags, setSelectedTags] = useState<TagType[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
