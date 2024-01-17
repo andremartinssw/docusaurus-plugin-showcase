@@ -130,7 +130,14 @@ module.exports = function(context, options) {
                 let newPath = filePath
                     .replace(siteDir, "")
                     .replace(pluginOptions.path + "/", "")
-                    .replace("/index.mdx", "");
+                    .replace("/index.mdx", "")
+                    .replace(".mdx", "")
+                    .replace(".md", "");
+
+                // If new path starts with /sdks/, add pathname:// at the start
+                if (newPath.startsWith("/sdks/")) {
+                    newPath = "pathname://" + newPath;
+                }
 
                 article.website = newPath;
             }
