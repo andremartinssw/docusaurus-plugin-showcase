@@ -14,7 +14,8 @@ const DEFAULT_OPTIONS = {
     ],
     path: "docs", // Path to data on filesystem, relative to site dir.
     routeBasePath: "docs", // URL Route.
-    onlyLogFailedAttempts: false
+    onlyLogFailedAttempts: false,
+    page: "/showcase"
 };
 
 let articles = [];
@@ -61,7 +62,7 @@ module.exports = function(context, options) {
             console.log("FINISHED: docusaurus-plugin-showcase");
 
             addRoute({
-                path: "/showcase",
+                path: pluginOptions.page,
                 component: "@site/plugins/docusaurus-plugin-showcase/dist/pages/showcase",
                 exact: true,
             });
