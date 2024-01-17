@@ -120,7 +120,7 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#F22F46",
     reference: "Reference",
-    link: "sdks/reference/swml/introduction"
+    link: "/sdks/reference/swml/introduction"
   },
 
   "sdk:relayrealtime": {
@@ -131,7 +131,7 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#044CF6",
     reference: "Reference",
-    link: "sdks/reference/realtime-sdk"
+    link: "/sdks/reference/realtime-sdk"
   },
 
   "sdk:relay": {
@@ -142,7 +142,7 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#9BB7FB",
     reference: "Reference",
-    link: "sdks"
+    link: "/sdks"
   },
 
   "sdk:relaybrowser3": {
@@ -153,7 +153,7 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#044CF6",
     reference: "Reference",
-    link: "sdks/reference/browser-sdk/"
+    link: "/sdks/reference/browser-sdk/"
   },
 
   "sdk:relaybrowser2": {
@@ -175,7 +175,7 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#F22F46",
     reference: "Reference",
-    link: "compatibility-api"
+    link: "/compatibility-api"
   },
 
   "product:ai": {
@@ -186,7 +186,7 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#F0DB4F",
     reference: "Overview",
-    link: "sdks/reference/swml/methods/ai/"
+    link: "/sdks/reference/swml/methods/ai/"
   },
 
   "product:voice": {
@@ -197,7 +197,7 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#9BB7FB",
     reference: "Overview",
-    link: "guides/voice-overview"
+    link: "/guides/voice-overview"
   },
 
   "product:messaging": {
@@ -208,7 +208,7 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#F22F46",
     reference: "Overview",
-    link: "guides/messaging-overview"
+    link: "/guides/messaging-overview"
   },
 
   "product:chat": {
@@ -219,7 +219,7 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#F0DB4F",
     reference: "Overview",
-    link: "guides/chat-overview"
+    link: "/guides/chat-overview"
   },
 
   "product:video": {
@@ -230,7 +230,7 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#044CF6",
     reference: "Overview",
-    link: "guides/video-overview"
+    link: "/guides/video-overview"
   },
 
   "product:fax": {
@@ -241,7 +241,7 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#F22F46",
     reference: "Overview",
-    link: "guides/fax-overview"
+    link: "/guides/fax-overview"
   },
 };
 
