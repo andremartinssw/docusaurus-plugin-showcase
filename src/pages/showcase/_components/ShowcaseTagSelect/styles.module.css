@@ -40,3 +40,20 @@ input:checked + .checkboxLabel:hover {
   opacity: 0.75;
   box-shadow: 0 0 2px 1px var(--ifm-color-primary-dark);
 }
+
+.tagLink {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-size: 0.60rem;
+  color: #63666A;
+  font-weight: 300;
+  text-align: center;
+}
+
+.centeredLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: min-content;
+}

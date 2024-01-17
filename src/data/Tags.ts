@@ -4,6 +4,8 @@ export type Tag = {
   label: string;
   description: string;
   color: string;
+  reference?: string;
+  link?: string;
 };
 
 export type TagType =
@@ -117,6 +119,8 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.sdk:swml.description",
     }),
     color: "#F22F46",
+    reference: "Reference",
+    link: "sdks/reference/swml/introduction"
   },
 
   "sdk:relayrealtime": {
@@ -126,6 +130,8 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.sdk:relayrealtime.description",
     }),
     color: "#044CF6",
+    reference: "Reference",
+    link: "sdks/reference/realtime-sdk"
   },
 
   "sdk:relay": {
@@ -135,6 +141,8 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.sdk:relay.description",
     }),
     color: "#9BB7FB",
+    reference: "Reference",
+    link: "sdks"
   },
 
   "sdk:relaybrowser3": {
@@ -144,6 +152,8 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.sdk:relaybrowser3.description",
     }),
     color: "#044CF6",
+    reference: "Reference",
+    link: "sdks/reference/browser-sdk/"
   },
 
   "sdk:relaybrowser2": {
@@ -153,6 +163,8 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.sdk:relaybrowser2.description",
     }),
     color: "#9BB7FB",
+    reference: "Reference",
+    link: "https://docs.signalwire.com/reference/relay-sdk-js"
   },
 
   "sdk:compatibility": {
@@ -162,6 +174,8 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.sdk:compatibility.description",
     }),
     color: "#F22F46",
+    reference: "Reference",
+    link: "compatibility-api"
   },
 
   "product:ai": {
@@ -171,6 +185,8 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.product:ai.description",
     }),
     color: "#F0DB4F",
+    reference: "Overview",
+    link: "sdks/reference/swml/methods/ai/"
   },
 
   "product:voice": {
@@ -180,6 +196,8 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.product:voice.description",
     }),
     color: "#9BB7FB",
+    reference: "Overview",
+    link: "guides/voice-overview"
   },
 
   "product:messaging": {
@@ -189,6 +207,8 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.product:messaging.description",
     }),
     color: "#F22F46",
+    reference: "Overview",
+    link: "guides/messaging-overview"
   },
 
   "product:chat": {
@@ -198,6 +218,8 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.product:chat.description",
     }),
     color: "#F0DB4F",
+    reference: "Overview",
+    link: "guides/chat-overview"
   },
 
   "product:video": {
@@ -207,6 +229,8 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.product:video.description",
     }),
     color: "#044CF6",
+    reference: "Overview",
+    link: "guides/video-overview"
   },
 
   "product:fax": {
@@ -216,6 +240,8 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.product:fax.description",
     }),
     color: "#F22F46",
+    reference: "Overview",
+    link: "guides/fax-overview"
   },
 };
 

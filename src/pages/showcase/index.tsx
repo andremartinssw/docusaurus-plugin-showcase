@@ -177,7 +177,7 @@ function ShowcaseFilters() {
 
                 {
                     TagList.filter(tag => tag.includes('prod')).map((tag, i) => {
-                        const {label, description, color} = Tags[tag];
+                        const {label, description, color, reference, link} = Tags[tag];
                         const id = `showcase_checkbox_id_${tag}`;
 
                         return (
@@ -190,6 +190,8 @@ function ShowcaseFilters() {
                                         tag={tag}
                                         id={id}
                                         label={label}
+                                        reference={reference}
+                                        link={link}
                                         icon={
                                             tag === 'favorite' ? (
                                                 <FavoriteIcon svgClass={styles.svgIconFavoriteXs}/>
@@ -216,7 +218,7 @@ function ShowcaseFilters() {
             </h4>
             <ul className={clsx('clean-list', styles.checkboxList)}>
                 {TagList.filter(tag => tag.includes('sdk')).map((tag, i) => {
-                    const {label, description, color} = Tags[tag];
+                    const {label, description, color, reference, link} = Tags[tag];
                     const id = `showcase_checkbox_id_${tag}`;
 
                     return (
@@ -229,6 +231,8 @@ function ShowcaseFilters() {
                                     tag={tag}
                                     id={id}
                                     label={label}
+                                    reference={reference}
+                                    link={link}
                                     icon={
                                         tag === 'favorite' ? (
                                             <FavoriteIcon svgClass={styles.svgIconFavoriteXs}/>
