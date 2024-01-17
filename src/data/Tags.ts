@@ -13,7 +13,6 @@ export type TagType =
   | "language:javascript"
   | "language:nodejs"
   | "language:csharp"
-  | "language:go"
   | "language:php"
   | "language:react"
   | "language:ruby"
@@ -65,15 +64,6 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.language:csharp.description",
     }),
     color: "#1384C8",
-  },
-
-  "language:go": {
-    label: translate({ message: "Go" }),
-    description: translate({
-      message: "",
-      id: "showcase.tag.language:go.description",
-    }),
-    color: "#6AD7E5",
   },
 
   "language:php": {
